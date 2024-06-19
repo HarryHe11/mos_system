@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/CUHKSZ-Logo.jpg') }}">
+</h2>
+
+<h1 align="center">Aliasing</h1><br>
+
+<h2>
+    What is aliasing?
+</h2>
+
+<div align="center">
+    <video width="480" height="360" controls>
+        <source src="{{ url_for('static', filename='videos/tutorial/aliasing/aliasing.mp4') }}" type="video/mp4">
+        <object data="{{ url_for('static', filename='videos/tutorial/aliasing/aliasing.mp4') }}" width="320"
+            height="240">
+            <embed src="movie.swf" width="320" height="240">
+        </object>
+    </video>
+</div>
+
+<p>
+    In the most straightforward terms, aliasing is a type of artifact in digital audio when the original analog signal
+    gets misidentified by the digital system. Currently, widely used GAN-based vocoders attain waveform via upsampling
+    the mel-spectrogram. This processing can be viewed as "adding features and harmonics." Several works have pointed
+    out that the upsampling block and the activation functions will bring out the aliasing problem in audio engineering.
+</p>
+
+<h2>
+    What does it sound like?
+</h2>
+
+<div align="center">
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/tutorial/aliasing/aliasing.png') }}"
+        style="width:500px;height:auto;">
+</div>
+
+<br>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/aliasing/aliasing.wav') }}" controls="controls">wav can
+        not be loaded</audio>
+</div>
+
+<p>
+    Audio with strong aliasing effects will tend to be metallic noise since all the harmonic parts are stuck together.
+</p>
+
+<div align="right">
+    <form method="post">
+        <button name="start" value="start">
+            <h2>Back</h2>
+        </button>
+    </form>
+    <br><br><br><br><br><br>
+</div>
+
+{% endblock %}

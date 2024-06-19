@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 align="center">Preference Test</h1>
+
+<h2>Overview</h2>
+
+<p>
+    In this part, you will be displayed to 18 group of samples. You need to choose your preference audio in each group
+    with the gorund truth as the reference. Some audios will
+    hold artifacts that we introduced in the tutorial part. Remember to focus more on these artifacts and be more
+    rational when judging audio.
+</p>
+
+<h2>
+    Example
+</h2>
+<h3>
+    In this case, the first audio sample is stable at the fundamental frequency. However, it cannot reconstruct the mid
+    and high-frequency parts, resulting in annoying noise. The second audio sample, in the meantime, alleviated the
+    noise problem. Although the second audio is unstable in energy and pitch, it still holds a better overall quality
+    than the first.
+</h3>
+
+<p>
+    Here is the ground truth audio for reference.
+</p>
+
+<div align="center">
+    <!-- Note: the src path could be confusing! See the URL for hints! -->
+    <audio src="{{ url_for('static', filename='audios/example/gt.wav') }}" controls="controls">{{wav_file_gt}} can not
+        be loaded</audio>
+</div>
+
+<p>
+    Listen to the following two audio samples and choose your preferred one.
+</p>
+
+<div align="center">
+    <!-- Note: the src path could be confusing! -->
+    <audio src="{{ url_for('static', filename='audios/example/melgan_orig.wav') }}" controls="controls">wav can not be
+        loaded</audio>
+    <audio src="{{ url_for('static', filename='audios/example/melgan_merge.wav') }}" controls="controls">wav can not be
+        loaded</audio>
+</div>
+
+<ul class="movie-list">
+    <li><input type="radio" name="preference" value="1"> The second one is better.</li>
+</ul>
+
+<!-- <h3>
+    In this case, both the two audios hold excellent quality. But if we listen to their details, we will find that the
+    second audio has some high-frequency noise, and it also enlarges the mouth clicks(neng <i>bu</i> neng <i>gei</i> wo
+    yi shou ge de shi jian). Thus the first audio sample is better.
+</h3>
+
+<p>
+    Here is the ground truth audio for reference.
+</p>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/example/gt.wav') }}" controls="controls">{{wav_file_gt}} can not
+        be loaded</audio>
+</div>
+
+<p>
+    Listen to the following two audio samples and choose your preferred one.
+</p>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/example/nsfhifigan_merge.wav') }}" controls="controls">wav can not
+        be
+        loaded</audio>
+    <audio src="{{ url_for('static', filename='audios/example/nsfhifigan_orig.wav') }}" controls="controls">wav can not
+        be
+        loaded</audio>
+</div>
+
+<ul class="movie-list">
+    <li><input type="radio" name="preference" value="-1"> The first one is better.</li>
+</ul> -->
+
+<div align="center">
+    <br>
+    <br>
+    <form method="post">
+        <button name="start" value="start">
+            <h2>Continue</h2>
+        </button>
+    </form>
+</div>
+
+
+
+{% endblock %}

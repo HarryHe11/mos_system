@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/CUHKSZ-Logo.jpg') }}">
+</h2>
+
+<h1 align="center">Mouth Click Distortion</h1><br>
+
+<h2>
+    What is a mouth click?
+</h2>
+
+<div align="center">
+    <video width="480" height="360" controls>
+        <source src="{{ url_for('static', filename='videos/tutorial/click/click_sample.mp4') }}" type="video/mp4">
+        <object data="{{ url_for('static', filename='videos/tutorial/click/click_sample.mp4') }}" width="320"
+            height="240">
+            <embed src="movie.swf" width="320" height="240">
+        </object>
+    </video>
+</div>
+
+<p>
+    Mouth-clicks sounds like little clicks or pops that are during, before or after voicing. Almost all human beings
+    have some kind of mouth noise when they talk or sing. It's caused by the tongue, teeth and saliva creating little
+    bubbles, clicks and pops as the voice is made.
+</p>
+
+<h2>
+    What is mouth click distortion?
+</h2>
+
+<div align="center">
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/tutorial/click/click.png') }}"
+        style="width:700px;height:auto;">
+</div>
+
+<p>
+    Mouth clicks usually occur as aperiodic parts in the singing voice, making it hard for our vocoder to resynthesis.
+    Without enough attention to the details in the frequency domain, the click will be resynthesized into noises. Below
+    are two audio samples, the first one is the ground truth and the second one is the prediction.
+</p>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/click/click_gt.wav') }}" controls="controls">wav
+        can not be loaded</audio>
+</div>
+
+
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/click/click_pred.wav') }}" controls="controls">wav can
+        not be loaded</audio>
+</div>
+
+<h2>
+    A closer look.
+</h2>
+
+<p>
+    We use a click detection algorithm and a declicker to extract the mouth click to provide a closer look. Below
+    are two audio samples, the first one is the ground truth and the second one is the prediction.
+</p>
+</p>
+
+
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/click/click_gt_only.wav') }}" controls="controls">wav
+        can not be loaded</audio>
+</div>
+
+
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/click/click_pred_only.wav') }}" controls="controls">wav
+        can not be loaded</audio>
+</div>
+
+<div align="right">
+    <form method="post">
+        <button name="start" value="start">
+            <h2>Back</h2>
+        </button>
+    </form>
+    <br><br><br><br><br><br>
+</div>
+
+{% endblock %}

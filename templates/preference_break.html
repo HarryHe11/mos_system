@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/CUHKSZ-Logo.jpg') }}">
+</h2>
+
+<h1 align="center">Preference Test</h1>
+
+Congratulations, {{user}}! You have done all the tests. Your help means a lot for our research. Thank
+you very much!
+
+{% endblock %}

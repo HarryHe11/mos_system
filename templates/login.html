@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 align="center">Please enter your name:</h1>
+<h2 align="center">(This is just used for identification during statistics)</h2>
+<div align="center">
+    <form method="post">
+        <input type="text" name="user">
+        <input type="submit" name="submit" value="Submit">
+    </form>
+</div>
+
+{% endblock %}

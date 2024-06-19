@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/CUHKSZ-Logo.jpg') }}">
+</h2>
+
+<h1 align="center">Subjective Evaluation</h1>
+
+<div align="center">This is the subjective evaluation.
+</div>
+
+<br>
+<br>
+
+<!-- <br>
+
+<h2>Section 1</h2>
+
+In this section, there will be a tutorial part and a MOS test.
+
+<br>
+<br>
+
+<b>Tutorial</b>: In this part, you will learn some general artifacts in audio generation, including the aliasing
+problem, the periodicity mismatch problem, etc. These problems are easy to understand and identify in an audio file.
+
+<br>
+<br>
+
+<b>MOS test</b>: In this part, you will be asked to grade 20 samples from a score of 1 to a score of 5. Some audios will
+hold artifacts that we introduced in the tutorial part. Remember to focus more on these artifacts and be more rational
+when judging audio. Some grading examples will be provided before the whole test.
+
+<br>
+
+<h2> Section 2</h2>
+
+In this section, there will be a tutorial part, a MOS test and a CMOS test.
+
+<br>
+<br>
+
+<b>Tutorial</b>: In this part, you will learn some "advanced artifacts" that you might be encountered in the following
+two test parts. Most of their definitions are adapted from Digital Signal Restoration. It will be challenging to learn
+these concepts and to identify them in audio, so please be patient.
+
+<br>
+<br>
+
+<b>MOS test</b>: In this part, you will be asked to grade 28 samples from a score of 1 to a score of 5. To distinguish
+the quality of these audios, you need to be very careful and remember to identify those minor artifacts we introduced in
+the tutorial. Some grading examples will be provided before the whole test with a comprehensive explanation.
+
+<br>
+<br>
+
+<b>CMOS test</b>: In this part, you will be displayed 12 synthesized sample pairs and be asked to determine which one
+sounds better. The ground truth audio will also be provided aside for reference. Some grading examples will be provided
+before the whole test with a comprehensive explanation since some audio will be hard to distinguish. -->
+
+<!-- Firstly, there will be one tutorial part:
+<ul>
+    <li> <b>Common Artifacts in Audio Generation</b>: In this part, you will learn different types of artifacts in audio
+        generation. Some test problems will also exist to ensure you have
+        understood this prior knowledge.</li>
+</ul> -->
+
+<!-- Then, there will be three evaluation parts:
+<ul>
+    <li> <b>Mean Opinion Score</b>: In every test, you will listen to ONE audio and rate it for naturalness(quality).
+        You are expected to conduct 20 listening tests in this part. </li>
+    <li> <b>Comparative Mean Opinion Score</b>: In every test, you will listen to TWO audios and rate them for speaker
+        similarity.
+        You are expected to conduct 20 listening tests in this part.</li>
+    <li> <b>ABX Test</b>: In every test, you will listen to TWO audios and rate them for speaker similarity.
+        You are expected to conduct 20 listening tests in this part. </li>
+</ul> -->
+
+<div align="center">
+    <br>
+    <br>
+    <form method="post">
+        <button name="start" value="start">
+            <h2>Start</h2>
+        </button>
+    </form>
+</div>
+
+
+{% endblock %}

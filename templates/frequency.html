@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/CUHKSZ-Logo.jpg') }}">
+</h2>
+
+<h1 align="center">Poor High Frequency Reconstruction</h1><br>
+
+<h2>
+    What does it sound like?
+</h2>
+
+<div align="center">
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/tutorial/frequency/frequency.png') }}"
+        style="width:700px;height:auto;">
+</div>
+
+<p>
+    It is hard for current neural vocoders to resynthesis the high-frequency parts accurately. The resulting audio
+    usually sounds "dull" and "dark," even with audible white noise in the high-frequency components. Below are two
+    audio samples. The first is the ground truth, and the second is the prediction.
+</p>
+
+
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/frequency/1044003410.wav') }}" controls="controls">wav
+        can not be loaded</audio>
+</div>
+
+
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/frequency/1044003410_pred.wav') }}"
+        controls="controls">wav can not be loaded</audio>
+</div>
+
+<h2>
+    A closer look.
+</h2>
+
+
+
+<div align="center">
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/tutorial/frequency/filter.png') }}"
+        style="width:700px;height:auto;">
+</div>
+
+<p>
+    Here are two audio samples with a sampling rate of 24khz passed through an equalizer, as shown in the figure above.
+    The first is the ground truth, and the second is our vocoder's prediction result. For ground truth, the
+    high-frequency components are precise and thus contribute to the whole audio's expressiveness. For prediction, on
+    the other hand, the resynthesis inaccuracy in high-frequency parts makes it noisy and dull. Therefore the prediction
+    audio will sound less light compared with the ground truth.
+</p>
+
+
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/frequency/high_freq_gt.mp3') }}" controls="controls">wav
+        can not be loaded</audio>
+</div>
+
+
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/frequency/high_freq_pred.mp3') }}"
+        controls="controls">wav can not be loaded</audio>
+</div>
+
+<div align="right">
+    <form method="post">
+        <button name="start" value="start">
+            <h2>Back</h2>
+        </button>
+    </form>
+    <br><br><br><br><br><br>
+</div>
+
+{% endblock %}

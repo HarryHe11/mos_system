@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/CUHKSZ-Logo.jpg') }}">
+</h2>
+
+<h1 align="center">Metallic Sound</h1><br>
+
+<h2>
+    High-Frequency Noise
+</h2>
+
+<div align="center">
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/tutorial/metallic/metallic.png') }}"
+        style="width:700px;height:auto;">
+</div>
+
+<p>
+    It is hard for our vocoder to track high-frequency components. If our model synthesizes inaccurate harmonic elements
+    and a series of noises, the result will just be metallic.
+</p>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/metallic/metallic_gt.wav') }}" controls="controls">wav
+        can not be loaded</audio>
+</div>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/metallic/metallic_pred.wav') }}" controls="controls">wav
+        can
+        not be loaded</audio>
+</div>
+
+<h2>
+    A closer look
+</h2>
+
+<p>
+    As illustrated below, we use a high pass filter to get the high-frequency parts of two audio samples. The first is
+    the ground truth, and the second is the prediction.
+</p>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/metallic/metallic_gt_high_freq.wav') }}"
+        controls="controls">wav
+        can not be loaded</audio>
+</div>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/metallic/metallic_pred_high_freq.wav') }}"
+        controls="controls">wav
+        can
+        not be loaded</audio>
+</div>
+
+<h2>
+    Aperiodic Transitions.
+</h2>
+
+<p>
+    Aperiodic transitions are also hard for neural vocoders to learn, thus metallic sounds will also occur in those
+    places.
+</p>
+
+<div align="center">
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/tutorial/metallic/transition.png') }}"
+        style="width:700px;height:auto;">
+</div>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/metallic/metallic_tran_gt.wav') }}"
+        controls="controls">wav
+        can not be loaded</audio>
+</div>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/metallic/metallic_tran_pred.wav') }}"
+        controls="controls">wav
+        can
+        not be loaded</audio>
+</div>
+
+<div align="right">
+    <form method="post">
+        <button name="start" value="start">
+            <h2>Back</h2>
+        </button>
+    </form>
+    <br><br><br><br><br><br>
+</div>
+
+{% endblock %}
