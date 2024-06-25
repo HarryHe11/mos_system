@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/CUHKSZ-Logo.jpg') }}">
+</h2>
+
+<h1 align="center">Periodicity</h1><br>
+
+<h2>
+    What is periodicity?
+</h2>
+
+
+
+<div align="center">
+    <img alt="Avatar" class="avatar"
+        src="{{ url_for('static', filename='images/tutorial/periodicity/periodicity.jpg') }}"
+        style="width:700px;height:auto;">
+</div>
+
+<p>
+    Periodicity is an essential property of human voice signals. In the time domain, it is defined by the repetition of
+    signal waveforms. In the frequency domain, periodicity is reflected by the appearance of solid spectral components
+    at equally spaced harmonic frequencies. From the perspective of voice production, periodicity in acoustic signals
+    results from the periodic vibration of vocal cords when a voiced part is produced. Thus, a change in periodicity
+    indicates a shift in voicing techniques, etc.
+</p>
+
+<h2>
+    Why problem will be occured due to the periodicity mismatch?
+</h2>
+
+
+
+<div align="center">
+    <img alt="Avatar" class="avatar"
+        src="{{ url_for('static', filename='images/tutorial/periodicity/periodicity_mismatch.png') }}"
+        style="width:700px;height:auto;">
+</div>
+
+<br>
+
+
+
+<div align="center">
+    <img alt="Avatar" class="avatar"
+        src="{{ url_for('static', filename='images/tutorial/periodicity/periodicity_mismatch_mel.png') }}"
+        style="width:700px;height:auto;">
+</div>
+
+<p>
+    Due to the loss of modeling phase information, current GAN-based vocoders tend to generate sounds with various
+    problems, including glitches, hoarse sounds, etc. Previous works have found that the position where these problems
+    occur will also tend to have a periodicity mismatch compared with the ground truth, thus introducing periodicity as
+    an objective evaluation metric for these time-domain-related problems. The following will demonstrate two main
+    periodicity mismatch problems for singing voices.
+</p>
+
+<h2>
+    Glitches
+</h2>
+
+
+
+<div align="center">
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/tutorial/periodicity/glitch.png') }}"
+        style="width:700px;height:auto;">
+</div>
+
+<p>
+    Glitches are short-duration broadband transients that can be clearly seen in the F0 part of a spectrogram. They will
+    be perceived as a “glitch” or “voice tremor,” especially audible during long utterances commonly found in singing
+    voices. Below are two audio examples. The first is the ground truth, while the second is the prediction with many
+    glitches.
+</p>
+
+
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/periodicity/rec.mp3') }}" controls="controls">wav can not
+        be loaded</audio>
+</div>
+
+
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/periodicity/pwg.mp3') }}" controls="controls">wav can not
+        be loaded</audio>
+</div>
+
+<h2>
+    Hoarse Utterances
+</h2>
+
+
+
+<div align="center">
+    <img alt="Avatar" class="avatar"
+        src="{{ url_for('static', filename='images/tutorial/periodicity/hoarse_sound.png') }}"
+        style="width:700px;height:auto;">
+</div>
+
+<p>
+    Without explicitly modeling for phase information, some harmonics will be cracked and blurred together during an
+    utterance, resulting in a hoarse sound. Below are two audio examples. The first is the ground truth, while the
+    second is the prediction with hoarse utterances.
+</p>
+
+
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/periodicity/1044003410.wav') }}" controls="controls">wav
+        can not be loaded</audio>
+</div>
+
+
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/periodicity/1044003410_bigvgan.wav') }}"
+        controls="controls">wav can not be
+        loaded</audio>
+</div>
+
+<div align="right">
+    <form method="post">
+        <button name="start" value="start">
+            <h2>Back</h2>
+        </button>
+    </form>
+    <br><br><br><br><br><br>
+</div>
+
+{% endblock %}

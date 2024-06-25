@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 align="center">Subjective Evaluation</h1>
+
+<h2>Overview</h2>
+
+<p>
+    In this part, you will be asked to grade 40 group of samples from a score of 1 to a score of 5. 
+    The following introduction is intended to help you understand the differences in different ratings. 
+</p>
+
+<b>
+    If you are already familiar with it, please click the 'Continue' button directly at the bottom.
+</b>
+
+<h2>
+    Grading Examples for Singing Voice
+</h2>
+<p>
+    Listen to the following audio and rate it for quality. Some of the audio samples you will hear are of high
+    quality, but some of them may sound artificial due to deterioration caused by computer processing. Please
+    evaluate the voice quality on a scale of 1 to 5.
+</p>
+
+<h3>
+    This is the ground truth audio which should be graded as "5".
+</h3>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/example/gt.wav') }}" controls="controls">wav can not be
+        loaded</audio>
+</div>
+
+<div>
+    <form method="post">
+        <ul class="movie-list">
+            <li><input type="radio" name="quality" value="5"> 5</li>
+        </ul>
+    </form>
+</div>
+
+<h3>
+    In this case, the audio should be graded around "4.5". Although it sounds stable and clear, it still lacks of
+    high-frequency components.
+</h3>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/example/hifigan_merge.wav') }}" controls="controls">wav can not
+        be loaded</audio>
+</div>
+
+<div>
+    <form method="post">
+        <ul class="movie-list">
+            <li><input type="radio" name="quality" value="4"> 4.5</li>
+        </ul>
+    </form>
+</div>
+
+<h3>
+    In this case, the audio should be graded around "4". Although it does not have any aliasing artifacts, there
+    exists
+    some phase distortions in the audio that can be perceived as hoarse sounds.
+</h3>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/example/bigvgan_merge.wav') }}" controls="controls">wav can not
+        be
+        loaded</audio>
+</div>
+
+
+<div>
+    <form method="post">
+        <ul class="movie-list">
+            <li><input type="radio" name="quality" value="5"> 4</li>
+        </ul>
+    </form>
+</div>
+
+<h3>
+    In this case, the audio should be graded around "3.5". It losses most of the high-frequency components and has some
+    audible artifacts, glitches in the low-frequency parts.
+</h3>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/example/hifigan_stft.wav') }}" controls="controls">wav can not
+        be loaded</audio>
+</div>
+
+<div>
+    <form method="post">
+        <ul class="movie-list">
+            <li><input type="radio" name="quality" value="4"> 3.5</li>
+        </ul>
+    </form>
+</div>
+
+<h3>
+    In this case, the audio should be graded below or equal to "3". Since it holds a lot of problems. It is unstable in
+    voicing
+    energy and has some "gaps" between
+    utterances.
+</h3>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/example/melgan_merge.wav') }}" controls="controls">wav can not
+        be loaded</audio>
+</div>
+
+<div>
+    <form method="post">
+        <ul class="movie-list">
+            <li><input type="radio" name="quality" value="4"> 3 or 2.x </li>
+        </ul>
+    </form>
+</div>
+
+<!-- <h2>
+    Grading Examples for Speech
+</h2>
+
+<h3>
+    This is the ground truth audio which should be graded as "5".
+</h3>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/example/gt_speech.wav') }}" controls="controls">wav can not be
+        loaded</audio>
+</div>
+
+<div>
+    <form method="post">
+        <ul class="movie-list">
+            <li><input type="radio" name="quality" value="5"> 5</li>
+        </ul>
+    </form>
+</div>
+
+<h3>
+    In this case, the audio should be graded around "4". Since it has some peirodicity mismatch problems.
+</h3>
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/example/hifigan_speech.wav') }}" controls="controls">wav can not
+        be
+        loaded</audio>
+</div>
+
+<div>
+    <form method="post">
+        <ul class="movie-list">
+            <li><input type="radio" name="quality" value="5"> 4</li>
+        </ul>
+    </form>
+</div> -->
+
+<div align="center">
+    <br>
+    <br>
+    <form method="post">
+        <button name="start" value="start">
+            <h2>Continue</h2>
+        </button>
+    </form>
+</div>
+
+{% endblock %}

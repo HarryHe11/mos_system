@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/CUHKSZ-Logo.jpg') }}">
+</h2>
+
+<h1 align="center">Similarity Test</h1>
+
+Congratulations, {{user}}! You have done the <strong>Naturalness</strong> test. Take a break. Just click "Continue" if
+you are ready for the <strong>Similarity Test</strong> test.
+
+<div align="center">
+    <br>
+    <br>
+    <form method="post">
+        <button name="start" value="start">
+            <h2>Continue</h2>
+        </button>
+    </form>
+</div>
+
+{% endblock %}

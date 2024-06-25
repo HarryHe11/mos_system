@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 align="center">Preference Test</h1>
+<h2>
+    No.{{index}}
+</h2>
+
+<p>
+    Here is the ground truth audio for reference.
+</p>
+
+<div align="center">
+    <!-- Note: the src path could be confusing! See the URL for hints! -->
+    <audio src="../../{{wav_file_gt}}" controls="controls">{{wav_file_gt}} can not be loaded</audio>
+</div>
+
+<p>
+    Listen to the following two audio samples and choose your preferred one.
+</p>
+
+<div align="center">
+    <!-- Note: the src path could be confusing! See the URL for hints! -->
+    <audio src="../../{{wav_file_1}}" controls="controls">{{wav_file_1}} can not be loaded</audio>
+    <audio src="../../{{wav_file_2}}" controls="controls">{{wav_file_2}} can not be loaded</audio>
+</div>
+
+<div>
+    <form method="post">
+        <ul class="movie-list">
+            <li><input type="radio" name="preference" value="0"> The first one is better.</li>
+            <li><input type="radio" name="preference" value="1"> The second one is better.</li>
+        </ul>
+        <div align="center">
+            <input type="submit" name="submit" value="Submit" class="submit">
+        </div>
+    </form>
+</div>
+
+{% endblock %}

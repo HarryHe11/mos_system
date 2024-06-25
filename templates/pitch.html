@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/CUHKSZ-Logo.jpg') }}">
+</h2>
+
+<h1 align="center">Out of Pitch</h1><br>
+
+
+
+<div align="center">
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/tutorial/pitch/pitch.png') }}"
+        style="width:700px;height:auto;">
+</div>
+
+<p>
+    Some neural vocoders do not explicitly model time-frequency representation or pitch, which will result in inaccuracy
+    in F0, especially for utterances with a low pitch. Here are two audio examples, the first is the ground truth, while
+    the second is the prediction.
+</p>
+
+
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/pitch/Bass-1_十年_0008.wav') }}" controls="controls">wav
+        can not be loaded</audio>
+</div>
+
+
+
+<div align="center">
+    <audio src="{{ url_for('static', filename='audios/tutorial/pitch/Bass-1_十年_0008_pred.wav') }}"
+        controls="controls">wav can not be loaded</audio>
+</div>
+
+<div align="right">
+    <form method="post">
+        <button name="start" value="start">
+            <h2>Back</h2>
+        </button>
+    </form>
+    <br><br><br><br><br><br>
+</div>
+
+{% endblock %}

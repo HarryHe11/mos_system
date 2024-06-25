@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 align="center">Naturalness Test</h1>
+<h2>
+    Page {{index}}/20
+</h2>
+<p>
+    Listen to the following set of audio and rate their <strong style="color: red;">Naturalness</strong> against the reference audio. 
+    Please evaluate the <strong style="color: red;">Naturalness</strong> on a scale of -3 to 3. (-3: Much worse, -2: Worse, -1: Slightly worse, 0: Same, 1: Slightly better, 2: Better, 3: Much better)
+</p>
+
+<div>
+    <form method="post">
+
+        <div align="center">
+            <audio src="../../{{wav_file1}}" controls="controls">wav can not be loaded</audio>
+        </div>
+
+        <div align="center">
+            <label for="cmos1">This is the reference</label>
+        </div>
+
+        <br>
+        <br>
+
+        <div align="center">
+            <audio src="../../{{wav_file2}}" controls="controls">wav can not be loaded</audio>
+        </div>
+
+        <div align="center">
+            <label for="cmos2">Choose a score</label>
+            <input type="range" name="cmos2" id="cmos2" min="-3" max="3" step="1" value="0">
+            <span id="cmos2-value">0</span>
+        </div>
+
+        <br>
+        <br>
+
+        <div align="center">
+            <audio src="../../{{wav_file3}}" controls="controls">wav can not be loaded</audio>
+        </div>
+
+        <div align="center">
+            <label for="cmos3">Choose a score</label>
+            <input type="range" name="cmos3" id="cmos3" min="-3" max="3" step="1" value="0">
+            <span id="cmos3-value">0</span>
+        </div>
+
+        <br>
+        <br>
+
+        <div align="center">
+            <audio src="../../{{wav_file4}}" controls="controls">wav can not be loaded</audio>
+        </div>
+
+        <div align="center">
+            <label for="cmos4">Choose a score</label>
+            <input type="range" name="cmos4" id="cmos4" min="-3" max="3" step="1" value="0">
+            <span id="cmos4-value">0</span>
+        </div>
+
+        <br>
+        <br>
+
+        <div align="center">
+            <audio src="../../{{wav_file5}}" controls="controls">wav can not be loaded</audio>
+        </div>
+
+        <div align="center">
+            <label for="cmos5">Choose a score</label>
+            <input type="range" name="cmos5" id="cmos5" min="-3" max="3" step="1" value="0">
+            <span id="cmos5-value">0</span>
+        </div>
+
+
+        <div align="center">
+            <input type="submit" name="submit" value="Submit" class="submit">
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('cmos2').addEventListener('input', function() {
+        document.getElementById('cmos2-value').textContent = this.value;
+    });
+    document.getElementById('cmos3').addEventListener('input', function() {
+        document.getElementById('cmos3-value').textContent = this.value;
+    });
+    document.getElementById('cmos4').addEventListener('input', function() {
+        document.getElementById('cmos4-value').textContent = this.value;
+    });
+    document.getElementById('cmos5').addEventListener('input', function() {
+        document.getElementById('cmos5-value').textContent = this.value;
+    });
+</script>
+
+{% endblock %}

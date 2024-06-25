@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/CUHKSZ-Logo.jpg') }}">
+</h2>
+
+<h1 align="center">Tutorial</h1>
+
+<h2>It takes some time to browse the whole tutorial section. If you feel like you are not interested in some of the
+    topics, you can skip them.</h2>
+
+<h2 align="center">
+    Overview
+</h2>
+
+<p>
+    In this part, you will learn some general artifacts in audio generation, including the aliasing
+    problem, the periodicity mismatch problem, etc. These problems are easy to understand and identify in an audio file.
+    You will also learn some advanced artifacts, including the mouth click distortion, phase distortion, etc.
+</p>
+
+<p>
+    When you finish browsing this tutorial, press "Finished" to start the evaluation.
+</p>
+
+<h2 align="center">
+    Contents
+</h2>
+
+<p align="center">
+    Here are a list of general artifacts you may encounter in the following evaluation test.
+</p>
+
+<div align="center">
+    <a href="./aliasing">Aliasing</a>
+    <br>
+</div>
+
+<div align="center">
+    <a href="./frequency">Poor High Frequency Reconstruction</a>
+    <br>
+</div>
+
+<div align="center">
+    <a href="./periodicity">Periodicity</a>
+    <br>
+</div>
+
+<div align="center">
+    <a href="./pitch">Out of Pitch</a>
+    <br>
+</div>
+
+<p align="center">
+    Here are a list of advanced artifacts you may encounter in the following evaluation test.
+</p>
+
+<div align="center">
+    <a href="./click">Mouth Click Distortion</a>
+    <br>
+</div>
+
+<div align="center">
+    <a href="./metallic">Metallic Sound</a>
+    <br>
+</div>
+
+<div align="center">
+    <br>
+    <br>
+    <form method="post">
+        <button name="start" value="start">
+            <h2>Finished</h2>
+        </button>
+    </form>
+</div>
+
+
+{% endblock %}
